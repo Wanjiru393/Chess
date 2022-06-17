@@ -1,7 +1,7 @@
 "use strict";
 
 let galaxy = document.querySelector(".container");
-function possibleKnightCoordinates(x=1, y=1) {
+function possibleQueenCoordinates(x=1, y=1) {
   let anotherplace = [];
   let myCoordinates = [
 
@@ -45,7 +45,7 @@ function possibleKnightCoordinates(x=1, y=1) {
     anotherplace.push([myCoordinates[i].x, myCoordinates[i].y]);
   }
   return anotherplace;
-  console.log(possibleKnightCoordinates());
+  console.log(possibleQueenCoordinates());
 };
 //bishop arrays
 
@@ -79,7 +79,7 @@ function cell(c, x, y, p = false, validco) {
   div.style.backgroundColor = c;
   if (p) {
     let img = document.createElement("i");
-    img.classList.add("fa-solid", "fa-chess-knight");
+    img.classList.add("fa-solid", "fa-chess-queen");
     img.style.color = "orange";
     img.style.height = "100%";
     img.setAttribute("alt", "the img");
@@ -103,7 +103,7 @@ function chessBoard(x, y) {
   parentCont.classList.add("parentCont");
   let cont = document.createElement("div");
   let k = 1;
-  var validCo = possibleKnightCoordinates(x, y);
+  var validCo = possibleQueenCoordinates(x, y);
   for (var i = 1; i < 9; i++) {
     let row = document.createElement("div");
     let col = document.createElement("div");
